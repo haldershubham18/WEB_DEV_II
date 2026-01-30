@@ -66,15 +66,32 @@ function message(event)
 
 // print(callback)
 
-function print(num){
-    setTimeout(() =>{
-        console.log("Inside print")
-        num()
+// function print(num){ //higher order fun
+//     setTimeout(() =>{
+//         console.log("Inside print")
+//         num()
         
-    },2000)
-}
+//     },2000)
+// }
 
-function sample(){ //callback fn
-    console.log("Inside  callback")
-}
-print(sample)
+// function sample(){ //callback fn
+//     console.log("Inside  callback")
+// }
+// print(sample)
+
+console.log("Starting homework....");
+setTimeout(() => {
+    console.log("Homework Done");
+    console.log("starting dinner....");
+
+    setTimeout(() => {
+        console.log("dinner done");
+        console.log("Getting ready for bed....");
+
+        setTimeout(() => {
+            console.log("going to playground");
+            }, 1000); //after dinner
+            
+        }, 1000); //after homework
+        
+    }, 1000); //after dinner
