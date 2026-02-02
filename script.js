@@ -95,3 +95,4 @@ setTimeout(() => {
         }, 1000); //after homework
         
     }, 1000); //after dinner
+    
