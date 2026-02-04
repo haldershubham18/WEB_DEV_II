@@ -96,29 +96,51 @@ function message(event)
         
 //     }, 1000); //after dinner
     
-function finishHomework(callback) {
-    console.log("Starting homework...");
+// function finishHomework(callback) {
+//     console.log("Starting homework...");
+//     setTimeout(() => {
+//         console.log("Homework done!");
+//         callback();
+//     }, 2000);
+// }
+
+// function eatDinner(callback) {
+//     console.log("Starting dinner...");
+//     setTimeout(() => {
+//         console.log("Dinner done!");
+//         callback();
+//     }, 1500);
+// }
+
+// function goToPlayground() {
+//     console.log("Going to the playground!");
+// }
+
+// // Chained in steps, but cleaner
+// finishHomework(() => {
+//     eatDinner(() => {
+//         goToPlayground();
+//     });
+// });
+
+
+const p=new Promise((resolve,reject)=>{
+    let done= false;
     setTimeout(() => {
-        console.log("Homework done!");
-        callback();
-    }, 2000);
-}
-
-function eatDinner(callback) {
-    console.log("Starting dinner...");
-    setTimeout(() => {
-        console.log("Dinner done!");
-        callback();
-    }, 1500);
-}
-
-function goToPlayground() {
-    console.log("Going to the playground!");
-}
-
-// Chained in steps, but cleaner
-finishHomework(() => {
-    eatDinner(() => {
-        goToPlayground();
-    });
-});
+        if(done){
+            resolve("work has been resolved")
+        }else{
+            reject("work has not been resolved")
+        }
+        
+        //resolve("resolved")
+        //resolve()
+    },5000)
+})
+p.then((data)=>{
+    console.log(data.name)
+}).catch((error)=>{
+    console.log(error)
+}).finally(() => {
+    console.log("finally Block");
+})
