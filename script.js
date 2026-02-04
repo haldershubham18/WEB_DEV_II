@@ -79,20 +79,46 @@ function message(event)
 // }
 // print(sample)
 
-console.log("Starting homework....");
-setTimeout(() => {
-    console.log("Homework Done");
-    console.log("starting dinner....");
+// console.log("Starting homework....");
+// setTimeout(() => {
+//     console.log("Homework Done");
+//     console.log("starting dinner....");
 
-    setTimeout(() => {
-        console.log("dinner done");
-        console.log("Getting ready for bed....");
+//     setTimeout(() => {
+//         console.log("dinner done");
+//         console.log("Getting ready for bed....");
 
-        setTimeout(() => {
-            console.log("going to playground");
-            }, 1000); //after dinner
+//         setTimeout(() => {
+//             console.log("going to playground");
+//             }, 1000); //after dinner
             
-        }, 1000); //after homework
+//         }, 1000); //after homework
         
-    }, 1000); //after dinner
+//     }, 1000); //after dinner
     
+function finishHomework(callback) {
+    console.log("Starting homework...");
+    setTimeout(() => {
+        console.log("Homework done!");
+        callback();
+    }, 2000);
+}
+
+function eatDinner(callback) {
+    console.log("Starting dinner...");
+    setTimeout(() => {
+        console.log("Dinner done!");
+        callback();
+    }, 1500);
+}
+
+function goToPlayground() {
+    console.log("Going to the playground!");
+}
+
+// Chained in steps, but cleaner
+finishHomework(() => {
+    eatDinner(() => {
+        goToPlayground();
+    });
+});
