@@ -124,23 +124,95 @@ function message(event)
 // });
 
 
-const p=new Promise((resolve,reject)=>{
-    let done= false;
-    setTimeout(() => {
-        if(done){
-            resolve("work has been resolved")
-        }else{
-            reject("work has not been resolved")
-        }
+
+//---------Promises---------
+// work to be done if the work of the asyn code is done
+// then --> if resolved
+// catch --> if rejected
+// finally --> after any of the above is excuted 
+
+// const p=new Promise((resolve,reject)=>{
+//     let done= false;
+//     setTimeout(() => {
+//         if(done){
+//             resolve({name:"john",age:18})
+//         }else{
+//             reject("work has not been resolved")
+//         }
         
-        //resolve("resolved")
-        //resolve()
-    },5000)
-})
-p.then((data)=>{
-    console.log(data.name)
-}).catch((error)=>{
-    console.log(error)
-}).finally(() => {
-    console.log("finally Block");
+//         //resolve("resolved")
+//         //resolve()
+//     },5000)
+// })
+// p.then((data)=>{
+//     console.log(data.name)
+// }).catch((error)=>{
+//     console.log(error)
+// }).finally(() => {
+//     console.log("finally Block");
+// })
+
+
+// ---------promise chaining---------
+
+function finishHomework() {
+    const p = new Promise((res,rej)=>{
+        let done = true;
+        setTimeout(()=>{
+            if (done){
+                console.log("homework done")
+                res("homeWork is done");
+            }else{
+                rej("homework not done");
+            }
+            },2000)
+        })
+    
+    return p;
+}
+
+function eatDinner() {
+    const p= new Promise((res,rej)=>{
+        let done =true;
+        setTimeout(()=>{
+            if (done){
+                console.log("dinner done")
+                res("dinner is done");
+            }else{
+                rej("dinner not done");
+            }
+            },2000)
+        })
+    return p;
+}
+
+function goToPlayground() {
+    const p= new Promise((res,rej)=>{
+        let done = true;
+        setTimeout(()=>{
+            if (done){
+                console.log("going to playground");
+                res("play time");
+            }else{
+                rej("not going to playground");
+            }
+            },2000)
+    })
+    return p;
+
+}
+
+
+finishHomework().then((data)=>{
+    console.log(data)
+    return eatDinner()
+}).then((data)=>{
+    console.log(data)
+    return goToPlayground()
+}).then((data)=>{
+    console.log(data)
+}).catch((err)=>{
+    console.log(err)
+}).finally(()=>{
+    console.log("go to sleep")
 })
