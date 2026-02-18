@@ -155,64 +155,88 @@ function message(event)
 
 // ---------promise chaining---------
 
-function finishHomework() {
-    const p = new Promise((res,rej)=>{
-        let done = true;
-        setTimeout(()=>{
-            if (done){
-                console.log("homework done")
-                res("homeWork is done");
-            }else{
-                rej("homework not done");
-            }
-            },2000)
-        })
+// function finishHomework() {
+//     const p = new Promise((res,rej)=>{
+//         let done = true;
+//         setTimeout(()=>{
+//             if (done){
+//                 console.log("homework done")
+//                 res("homeWork is done");
+//             }else{
+//                 rej("homework not done");
+//             }
+//             },2000)
+//         })
     
-    return p;
-}
+//     return p;
+// }
 
-function eatDinner() {
-    const p= new Promise((res,rej)=>{
-        let done =true;
-        setTimeout(()=>{
-            if (done){
-                console.log("dinner done")
-                res("dinner is done");
-            }else{
-                rej("dinner not done");
-            }
-            },2000)
-        })
-    return p;
-}
+// function eatDinner() {
+//     const p= new Promise((res,rej)=>{
+//         let done =true;
+//         setTimeout(()=>{
+//             if (done){
+//                 console.log("dinner done")
+//                 res("dinner is done");
+//             }else{
+//                 rej("dinner not done");
+//             }
+//             },2000)
+//         })
+//     return p;
+// }
 
-function goToPlayground() {
-    const p= new Promise((res,rej)=>{
-        let done = true;
-        setTimeout(()=>{
-            if (done){
-                console.log("going to playground");
-                res("play time");
-            }else{
-                rej("not going to playground");
-            }
-            },2000)
-    })
-    return p;
+// function goToPlayground() {
+//     const p= new Promise((res,rej)=>{
+//         let done = true;
+//         setTimeout(()=>{
+//             if (done){
+//                 console.log("going to playground");
+//                 res("play time");
+//             }else{
+//                 rej("not going to playground");
+//             }
+//             },2000)
+//     })
+//     return p;
 
-}
+// }
 
 
-finishHomework().then((data)=>{
-    console.log(data)
-    return eatDinner()
-}).then((data)=>{
-    console.log(data)
-    return goToPlayground()
-}).then((data)=>{
-    console.log(data)
-}).catch((err)=>{
-    console.log(err)
-}).finally(()=>{
-    console.log("go to sleep")
-})
+// finishHomework().then((data)=>{
+//     console.log(data)
+//     return eatDinner()
+// }).then((data)=>{
+//     console.log(data)
+//     return goToPlayground()
+// }).then((data)=>{
+//     console.log(data)
+// }).catch((err)=>{
+//     console.log(err)
+// }).finally(()=>{
+//     console.log("go to sleep")
+// })
+
+
+// ---------async await---------
+
+// async function dailyRoutine(){
+//     try{
+//         const homework= await finishHomework(); 
+//         console.log(homework)
+//         const dinner= await eatDinner();
+//         console.log(dinner)
+//         const playground= await goToPlayground();
+//         console.log(playground)
+//     }catch(err){
+//         console.log(err)
+//     }
+//     finally{
+//         console.log("go to sleep")
+//     }
+// }
+
+// dailyRoutine()  
+
+
+
