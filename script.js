@@ -238,5 +238,83 @@ function message(event)
 
 // dailyRoutine()  
 
+//-----------------Error--------------
+// async function getData(){
+//     const response = await fetch ("https://dummyjson.com/products")
+//     const data = await response.json()
+//     data.products.forEach((product)=>{
+//         console.log(product.title)
+//     })
+// }
+
+// getData()
+
+// async function getData(){
+//    try{
+//     const response = await fetch ("https://dummyjson.com/products")
+//    if(response.ok===false){
+//         throw new Error("Something went wrong")
+//    } 
+    
+//     console.log (response)
+//     const data = await response.json()
+//     console.log(data)
+//     data.products.forEach((product)=>{
+//         console.log(product.title)
+//     })
+// }catch(e){
+//     console.log(e)
+// }
+// }
+
+// getData()
+// async function getData({
+//     try{
+//         const response= await fetch("https://dummyjson.com/products",{
+//             method: "POST"
+//             headers: {"Content-Type" :"application/json"}
+//             body : JSON.stringify({
+//                 title: "Macbook M5",
+//                 price: 100000,
+//                 decription :"latest Mackbook with M5 chip",
+//                 category: "laptop",
+//                 thumbnail:"htpps://example.com/macbook-m5.jpg"
+
+//     })
+
+//     })
+// }
+// })
 
 
+// ---------------------- Local Storage--------------------
+// localStorage.setItem("name","ren")
+// localStorage.setItem("age",23)
+
+// const uname=localStorage.getItem("name")
+// console.log(uname)
+// console.log(localStorage.getItem("age"))
+
+// localStorage.removeItem("name")
+// localStorage.clear()
+
+//----------- session storage-------------
+
+// sessionStorage.setItem("name","ren")
+// sessionStorage.setItem("age",23)
+
+// const uname=sessionStorage.getItem("name")
+// console.log(uname)
+// console.log(sessionStorage.getItem("age"))
+
+// sessionStorage.removeItem("name")
+// sessionStorage.clear()
+
+// ------- cookie------------
+document.cookie="name=ren; expires=Thu,20 Feb 2026 12:00:00 UTC"
+document.cookie="age=25; expires=Thu,20 Feb 2026 12:00:00 UTC"
+console.log(document.cookie)
+
+async function fetchData(){
+    await fetch("https:\\127.0.0.1")
+}
