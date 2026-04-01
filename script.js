@@ -311,10 +311,12 @@ function message(event)
 // sessionStorage.clear()
 
 // ------- cookie------------
-document.cookie="name=ren; expires=Thu,20 Feb 2026 12:00:00 UTC"
-document.cookie="age=25; expires=Thu,20 Feb 2026 12:00:00 UTC"
-console.log(document.cookie)
+// document.cookie="name=ren; expires=Thu,20 Feb 2026 12:00:00 UTC"
+// document.cookie="age=25; expires=Thu,20 Feb 2026 12:00:00 UTC"
+// console.log(document.cookie)
 
-async function fetchData(){
-    await fetch("https:\\127.0.0.1")
-}
+// async function fetchData(){
+//     await fetch("https:\\127.0.0.1")
+// }
+
+
