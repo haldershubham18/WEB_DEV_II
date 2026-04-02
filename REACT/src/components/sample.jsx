@@ -43,6 +43,18 @@ class Sample extends Component{
 export default Sample
 
 
-
+function sample() {
+    const [count, setCount] = useState (0)
+    const increment =() =>{
+        setCount(count + 1)
+    }
+    return (
+        <div>
+            <h1>This is a sample</h1>
+            <h2>{count}</h2>
+            <button onClick={increment}>Incerment</button>
+        </div>
+    )
+}
 
 
