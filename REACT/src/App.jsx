@@ -4,6 +4,8 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import wish from './components/sample.jsx'
+import Sample from './components/sample.jsx'
+import Homepage from './components/Homepage.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,6 +31,8 @@ function App() {
           Count is {count}
         </button>
       </section>
+
+      <Sample></Sample>
 
       <div className="ticks"></div>
 
@@ -115,6 +119,19 @@ function App() {
 
       <div className="ticks"></div>
       <section id="spacer"></section>
+    </>
+  )
+}
+
+function App(){
+  const[menu,setMenu] = useState("Sports")
+  const[abc , setAbc] = useState("Entertainment")
+
+  return(
+    <>
+    <Navbar list={menu}/>
+    <Navbar list={abc}/>
+    <Sample/>
     </>
   )
 }

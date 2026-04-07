@@ -57,4 +57,17 @@ function sample() {
     )
 }
 
+function sample() {
+    const [count, setCount] = useState (0)
+    const decrement =() =>{
+        setCount(count - 1)
+    }
+    return (
+        <div>
+            <h1>This is a sample</h1>
+            <h2>{count}</h2>
+            <button onClick={decrement}>Decrment</button>
+        </div>
+    )
+}
 
