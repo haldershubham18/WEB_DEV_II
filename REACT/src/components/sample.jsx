@@ -20,6 +20,7 @@
 // export default Sample
 
 import React, {Component} from 'react'
+import NavStyle from
 
 class Sample extends Component{
     constructor(props){
@@ -71,3 +72,23 @@ function sample() {
     )
 }
 
+Constructor(props){
+    super(props)
+    this.state={}
+}
+
+ComponentDioMount() {
+    console.log("component is mounted")
+}
+
+shouldComponentUpdate(nextProps, nextState){
+
+}
+return(
+    <div>
+        <h1>this is a sample component</h1>
+        <h2>{count}</h2>
+        <button style={{backgroundColor:"red",color:"white",width:"100px",height:"30px"}}
+        onClick={increment}
+    </div>
+)
