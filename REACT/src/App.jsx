@@ -1,138 +1,82 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
-import wish from './components/sample.jsx'
 import Sample from './components/sample.jsx'
-import Homepage from './components/Homepage.jsx'
+
+const trustMetrics = [
+  { label: 'Avg. Detection Accuracy', value: '96.4%' },
+  { label: 'Frame Sync Latency', value: '120ms' },
+  { label: 'Monitoring Sessions', value: '18.2K' },
+]
+
+const solutions = [
+  {
+    title: 'Live Surveillance Tracking',
+    description:
+      'Watch annotated frames in real-time with confidence scores for every detected object.',
+  },
+  {
+    title: 'Road Safety Monitoring',
+    description:
+      'Track vehicles, lane behavior, and pedestrian movement from uploaded camera footage.',
+  },
+  {
+    title: 'Factory Floor Intelligence',
+    description:
+      'Detect PPE compliance and unsafe activity patterns before incidents occur.',
+  },
+]
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <div className="app-shell">
+      <header className="topbar">
+        <div className="brand-wrap">
+          <span className="brand-dot" aria-hidden="true"></span>
+          <span className="brand-name">VisionGuard AI</span>
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
+        <nav className="top-nav" aria-label="Primary">
+          <a href="#overview">Overview</a>
+          <a href="#detector">Detector</a>
+          <a href="#solutions">Solutions</a>
+        </nav>
+        <button className="primary-btn" type="button">
+          Request Demo
+        </button>
+      </header>
+
+      <section id="overview" className="hero-section">
+        <div className="hero-copy">
+          <p className="eyebrow">Computer Vision Platform</p>
+          <h1>See exactly how your model detects objects, frame by frame.</h1>
+          <p className="hero-subtext">
+            Upload a video, run detection, and review the annotated output feed with
+            confidence overlays in a production-grade dashboard.
           </p>
         </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
 
-      <Sample></Sample>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+        <div className="metric-grid" role="list" aria-label="Performance metrics">
+          {trustMetrics.map((item) => (
+            <article className="metric-card" key={item.label} role="listitem">
+              <p>{item.label}</p>
+              <h3>{item.value}</h3>
+            </article>
+          ))}
         </div>
       </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
-}
+      <Sample />
 
-function App(){
-  const[menu,setMenu] = useState("Sports")
-  const[abc , setAbc] = useState("Entertainment")
-
-  return(
-    <>
-    <Navbar list={menu}/>
-    <Navbar list={abc}/>
-    <Sample/>
-    </>
+      <section id="solutions" className="solutions-section">
+        <h2>Built for real-world operations</h2>
+        <div className="solutions-grid">
+          {solutions.map((solution) => (
+            <article className="solution-card" key={solution.title}>
+              <h3>{solution.title}</h3>
+              <p>{solution.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+    </div>
   )
 }
 
