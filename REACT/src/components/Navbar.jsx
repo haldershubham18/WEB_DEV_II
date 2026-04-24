@@ -6,6 +6,8 @@ function Navbar() {
                 <li><a href="#" style={{ color: 'white', textDecoration: 'none' }}>Home</a></li>
                 <li><a href="#" style={{ color: 'white', textDecoration: 'none' }}>About</a></li>
                 <li><a href="#" style={{ color: 'white', textDecoration: 'none' }}>Contact</a></li>
+                <li><Link to ='/sample'>Sample</Link></li>
+            
             </ul>
         </nav>
     )

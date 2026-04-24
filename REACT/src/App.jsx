@@ -1,5 +1,7 @@
 import './App.css'
 import Sample from './components/sample.jsx'
+import Contact from './component/Contacts'
+import {Route, Routes} from 'react-router-dom'
 
 const trustMetrics = [
   { label: 'Avg. Detection Accuracy', value: '96.4%' },
@@ -79,5 +81,10 @@ function App() {
     </div>
   )
 }
+function App(){
+  const [menu, setMenu]= useState("sports")
+  const [abc, setAbc] = useState("Entertainment")
 
+  return
+}
 export default App
