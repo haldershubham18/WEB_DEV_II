@@ -2,6 +2,7 @@ import './App.css'
 import Sample from './components/sample.jsx'
 import Contact from './component/Contacts'
 import {Route, Routes} from 'react-router-dom'
+import { useContext } from 'react'
 
 const trustMetrics = [
   { label: 'Avg. Detection Accuracy', value: '96.4%' },
@@ -87,4 +88,18 @@ function App(){
 
   return
 }
+
+function user() {
+  const name=useContext(UserContext)
+  return (
+    <div>
+      <h1>Hello {name}</h1>
+    </div>
+  )
+}
+
+function
+
+
+
 export default App
